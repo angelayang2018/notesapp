@@ -1,23 +1,29 @@
 import React from "react";
+import "./Main.css";
+import Toolbar from "./Toolbar";
 
-function Main({ activeNote, onUpdateNote }) {
+function Main({ activeNote, onUpdateNote, onToggleMode, darkMode }) {
   const onEditField = (key, value) => {
-      onUpdateNote({
-          ...activeNote,
-          [key]: value,
-          lastModified: Date.now(),
-      })
+    onUpdateNote({
+      ...activeNote,
+      [key]: value,
+      lastModified: Date.now(),
+    });
   };
 
-  if(!activeNote) return <div className = "no-active-note">No note selected</div>
+
+  if (!activeNote)
+    return <div className={`no-active-note ${darkMode && "dark-mode-main"}`}>No note selected</div>;
   return (
-    <div className="app-main">
+    <div className={`app-main ${darkMode && 'dark-mode-main'}`}>
       <div className="app-main-note-edit">
+        <Toolbar onToggleMode={onToggleMode} />
         <input
           type="text"
           id="title"
           value={activeNote.title}
           onChange={(e) => onEditField("title", e.target.value)}
+          placeholder="Title"
           autoFocus
         />
         <textarea
@@ -27,10 +33,6 @@ function Main({ activeNote, onUpdateNote }) {
           placeholder="Write your note here..."
         />
       </div>
-      {/* <div className="app-main-note-preview">
-        <h1 className="preview-title">{activeNote.title}</h1>
-        <div className="markdown-preview">{activeNote.body}</div>
-      </div> */}
     </div>
   );
 }

@@ -5,12 +5,14 @@ import Main from "./components/Main";
 import Sidebar from "./components/Sidebar";
 
 function App() {
-  const [notes, setNotes] = useState(localStorage.notes ? JSON.parse(localStorage.notes): []);
+  const [notes, setNotes] = useState(
+    localStorage.notes ? JSON.parse(localStorage.notes) : []
+  );
 
   const [activeNote, setActiveNote] = useState(false);
 
-  useEffect(() =>{
-    localStorage.setItem("notes", JSON.stringify(notes))
+  useEffect(() => {
+    localStorage.setItem("notes", JSON.stringify(notes));
   }, [notes]);
 
   const onAddNote = () => {
@@ -24,17 +26,15 @@ function App() {
     setNotes([newNote, ...notes]);
   };
 
-  const onUpdateNote = (updatedNote) =>{
-
-    const updatedNotesArray = notes.map((note) =>{
-      if(note.id === activeNote) {
+  const onUpdateNote = (updatedNote) => {
+    const updatedNotesArray = notes.map((note) => {
+      if (note.id === activeNote) {
         return updatedNote;
       }
       return note;
     });
     setNotes(updatedNotesArray);
-
-  }
+  };
 
   const onDeleteNote = (idToDelete) => {
     setNotes(notes.filter((note) => note.id !== idToDelete));
@@ -44,6 +44,8 @@ function App() {
     return notes.find((note) => note.id === activeNote);
   };
 
+  const [darkMode, setDarkMode] = useState(false);
+
   return (
     <div className="App">
       <Sidebar
@@ -52,8 +54,14 @@ function App() {
         onDeleteNote={onDeleteNote}
         activeNote={activeNote}
         setActiveNote={setActiveNote}
+        darkMode={darkMode}
       />
-      <Main activeNote={getActiveNote()}  onUpdateNote = {onUpdateNote}/>
+      <Main
+        activeNote={getActiveNote()}
+        onUpdateNote={onUpdateNote}
+        onToggleMode={setDarkMode}
+        darkMode = {darkMode}
+      />
     </div>
   );
 }
