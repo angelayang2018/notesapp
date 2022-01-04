@@ -30,9 +30,7 @@
   display: flex;
   justify-content: space-between;
 }
-.app-sidebar-note button {
-  color: crimson;
-}
+
 .app-sidebar-note p {
   margin: 10px 0;
 }
@@ -43,7 +41,7 @@
 
 .app-sidebar-note.active,
 .app-sidebar-note.active small {
-  background-color: #08c;
+  background-color: rgb(105, 190, 233);
   color: white;
 }
 

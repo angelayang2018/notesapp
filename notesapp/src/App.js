@@ -58,6 +58,7 @@ function App() {
       />
       <Main
         activeNote={getActiveNote()}
+        onDeleteNote={onDeleteNote}
         onUpdateNote={onUpdateNote}
         onToggleMode={setDarkMode}
         darkMode = {darkMode}

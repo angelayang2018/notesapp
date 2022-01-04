@@ -1,8 +1,12 @@
 import React from "react";
+import "./Toolbar.css"
 
 function Search(){
     return(
-        <div classname = "search-container">
+        <div className = "search-container">
+            <i className="fas fa-search"></i>
+            <input type = "text" placeholder="Search" />
+            
 
         </div>
     )  

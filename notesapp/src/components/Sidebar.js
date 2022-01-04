@@ -27,7 +27,7 @@ function Sidebar({
           >
             <div className="sidebar-note-title">
               <strong>{note.title && note.title.substr(0, 20)}</strong>
-              <button onClick={() => onDeleteNote(note.id)}>Delete</button>
+              
             </div>
 
             <p>{note.body && note.body.substr(0, 65) + "..."}</p>
