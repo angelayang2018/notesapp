@@ -1,13 +1,11 @@
 import React from "react";
 import "./Toolbar.css"
 
-function Search(){
+function Search({onSearchText}){
     return(
         <div className = "search-container">
             <i className="fas fa-search"></i>
-            <input type = "text" placeholder="Search" />
-            
-
+            <input onChange = {e => {onSearchText(e.target.value)}}type = "text" placeholder="Search" />
         </div>
     )  
 }

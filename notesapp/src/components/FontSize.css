@@ -1,0 +1,33 @@
+select {
+  height: 38px;
+  width: 55px;
+  border: 1px solid rgb(187, 187, 187);
+  outline: none;
+  padding: 5px;
+  -webkit-transition: background-color 500ms linear;
+  -ms-transition: background-color 500ms linear;
+  transtion: background-color 500ms linear;
+}
+
+.font-size-container i {
+  border: 1px solid rgb(187, 187, 187);
+  padding: 10px;
+}
+
+.font-size-container i:first-child {
+  border-radius: 5px 0px 0px 5px;
+  border-right: 0px;
+}
+
+.font-size-container i:last-child {
+  border-radius: 0px 5px 5px 0px;
+  border-left: 0px;
+}
+
+.darkmode-fontsize select {
+  background-color: #242424;
+  color: white;
+  -webkit-transition: background-color 500ms linear;
+  -ms-transition: background-color 500ms linear;
+  transtion: background-color 500ms linear;
+}

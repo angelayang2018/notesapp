@@ -24,6 +24,7 @@ function App() {
     };
 
     setNotes([newNote, ...notes]);
+    setActiveNote(newNote.id);
   };
 
   const onUpdateNote = (updatedNote) => {
@@ -46,10 +47,16 @@ function App() {
 
   const [darkMode, setDarkMode] = useState(false);
 
+  const [searchText, setSearchText] = useState("");
+
   return (
-    <div className="App">
+    <div className={`App ${darkMode && 'darkmode-app'}`}>
       <Sidebar
-        notes={notes}
+        notes={notes.filter(
+          (note) =>
+            note.body.toLowerCase().includes(searchText.toLowerCase()) ||
+            note.title.toLowerCase().includes(searchText.toLowerCase())
+        )}
         onAddNote={onAddNote}
         onDeleteNote={onDeleteNote}
         activeNote={activeNote}
@@ -57,11 +64,12 @@ function App() {
         darkMode={darkMode}
       />
       <Main
+        onSearchText={setSearchText}
         activeNote={getActiveNote()}
         onDeleteNote={onDeleteNote}
         onUpdateNote={onUpdateNote}
         onToggleMode={setDarkMode}
-        darkMode = {darkMode}
+        darkMode={darkMode}
       />
     </div>
   );

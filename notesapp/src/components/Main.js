@@ -2,7 +2,14 @@ import React from "react";
 import "./Main.css";
 import Toolbar from "./Toolbar";
 
-function Main({ activeNote, onUpdateNote, onToggleMode, darkMode, onDeleteNote}) {
+function Main({
+  activeNote,
+  onUpdateNote,
+  onToggleMode,
+  darkMode,
+  onDeleteNote,
+  onSearchText,
+}) {
   const onEditField = (key, value) => {
     onUpdateNote({
       ...activeNote,
@@ -11,18 +18,32 @@ function Main({ activeNote, onUpdateNote, onToggleMode, darkMode, onDeleteNote})
     });
   };
 
-
-
   if (!activeNote)
-    return <div className={`no-active-note ${darkMode && "dark-mode-main"}`}>No note selected</div>;
+    return (
+      <div className={`no-active-note ${darkMode && "dark-mode-main"}`}>
+        No note selected
+      </div>
+    );
   return (
-    <div className={`app-main ${darkMode && 'dark-mode-main'}`}>
+    <div className={`app-main ${darkMode && "dark-mode-main"}`}>
       <div className="app-main-note-edit">
-        <Toolbar activeNote = {activeNote} onToggleMode={onToggleMode} onDeleteNote = {onDeleteNote}/>
-        <p className = "main-date">Last modified: {new Date(activeNote.lastModified).toLocaleDateString("en-GB", {
-                hour: "2-digit",
-                minute: "2-digit",
-              })}</p>
+        <Toolbar
+          activeNote={activeNote}
+          onToggleMode={onToggleMode}
+          onDeleteNote={onDeleteNote}
+          onSearchText = {onSearchText}
+          darkMode = {darkMode}
+        />
+        <p className="main-date">
+          Last modified:{" "}
+          {new Date(activeNote.lastModified).toLocaleDateString("en-GB", {
+            month: "long",
+            day: "2-digit",
+            year: "numeric",
+            hour: "2-digit",
+            minute: "2-digit",
+          })}
+        </p>
         <input
           type="text"
           id="title"
