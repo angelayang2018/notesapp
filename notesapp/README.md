@@ -1,4 +1,4 @@
-#NotesApp
+# NotesApp
 
 I followed the tutorial by James Grimshaw (https://www.youtube.com/watch?v=ulOKYl5sHGk&ab_channel=JamesGrimshaw) for the basic functions like adding, deleting a note, and the basic css. For the color picker, I used React Color (http://casesandberg.github.io/react-color/). 
 
