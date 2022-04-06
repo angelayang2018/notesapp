@@ -1,3 +1,19 @@
+#NotesApp
+
+I followed the tutorial by James Grimshaw (https://www.youtube.com/watch?v=ulOKYl5sHGk&ab_channel=JamesGrimshaw) for the basic functions like adding, deleting a note, and the basic css. For the color picker, I used React Color (http://casesandberg.github.io/react-color/). 
+
+##Features
+
+Adding and deleting a note
+Changing the alignmnent of the text
+Toggling between light and dark mode
+Choosing the color of the text using the react color picker
+Search bar that searches through the notes' text and title
+Sidebar that shows all the notes
+Ability to click on the sidebar to switch between notes
+Timestamp on all notes that shows when they were last modified
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
