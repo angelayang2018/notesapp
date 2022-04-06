@@ -1,5 +1,6 @@
 # NotesApp
 
+NotesApp is a notetaking app that is created using the React framework. 
 I followed the tutorial by James Grimshaw (https://www.youtube.com/watch?v=ulOKYl5sHGk&ab_channel=JamesGrimshaw) for the basic functions like adding, deleting a note, and the basic css. 
 
 
