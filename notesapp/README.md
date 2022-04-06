@@ -9,7 +9,8 @@ I followed the tutorial by James Grimshaw (https://www.youtube.com/watch?v=ulOKY
 - Toggling between light and dark mode
 - Choosing the color of the text using the react color picker
 - Search bar that searches through the notes' text and title
-- Sidebar that shows all the notes
+- Sidebar that shows a list of all the notes
+- Preview of a note's title and text in the sidebar
 - Ability to click on the sidebar to switch between notes
 - Timestamp on all notes that shows when they were last modified
 
