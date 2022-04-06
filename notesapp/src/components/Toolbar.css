@@ -16,6 +16,20 @@
   
 }
 
+.sketch-picker{
+  position: absolute;
+  top: 32px;
+  left: 240px;
+}
+
+.displayOn{
+  visibility: visible;
+}
+
+.displayOff{
+  visibility: hidden;
+}
+
 .search-container {
   display: flex;
   border: solid 1px rgb(187, 187, 187);

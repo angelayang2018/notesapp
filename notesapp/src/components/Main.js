@@ -22,12 +22,8 @@ function Main({
     });
   };
 
-  const [style, setStyle] = useState({textAlign: "left", color: "black"});
+  const [style, setStyle] = useState({textAlign: "left", color: "black", fontWeight: "normal"});
   
- 
-
-
-
 
   if (!activeNote)
     return (

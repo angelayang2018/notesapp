@@ -14,6 +14,12 @@ function Toolbar({
   style,
   setStyle,
 }) {
+  const handleChangeComplete = (newColor, event) => {
+    setStyle({ color: newColor.hex });
+  };
+
+  const [isVisible, setVisible] = useState("false");
+
   return (
     <div className="toolbar-container">
       <div className="trash-container">
@@ -31,10 +37,16 @@ function Toolbar({
         <i className="fas fa-bold"></i>
         <i className="fas fa-italic"></i>
         <i className="fas fa-underline"></i>
-        <i className="fas fa-fill-drip"></i>
-        <i className="fas fa-highlighter" onClick={() => {
-          <SketchPicker/>
-        }}></i>
+        <i
+          className="fas fa-fill-drip"
+          onClick={() => {
+            setVisible(!isVisible);
+          }}
+        ></i>
+      </div>
+
+      <div className={`sketch-picker ${isVisible ? "displayOff" : "displayOn"}`}>
+        <SketchPicker color={style.color} onChange={handleChangeComplete} />
       </div>
 
       <div className="align-container">
@@ -56,9 +68,12 @@ function Toolbar({
             setStyle({ textAlign: "right" });
           }}
         ></i>
-        <i className="fas fa-align-justify" onClick = {() => {
-            setStyle({textAlign: "justify"})
-          }}></i>
+        <i
+          className="fas fa-align-justify"
+          onClick={() => {
+            setStyle({ textAlign: "justify" });
+          }}
+        ></i>
       </div>
 
       <label className="switch">
