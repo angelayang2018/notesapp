@@ -1,6 +1,10 @@
+import { buildQueries } from "@testing-library/react";
 import React from "react";
 import "./Main.css";
 import Toolbar from "./Toolbar";
+import { useEffect, useState } from "react";
+
+
 
 function Main({
   activeNote,
@@ -18,6 +22,13 @@ function Main({
     });
   };
 
+  const [style, setStyle] = useState({textAlign: "left", color: "black"});
+  
+ 
+
+
+
+
   if (!activeNote)
     return (
       <div className={`no-active-note ${darkMode && "dark-mode-main"}`}>
@@ -33,6 +44,8 @@ function Main({
           onDeleteNote={onDeleteNote}
           onSearchText = {onSearchText}
           darkMode = {darkMode}
+          style = {style}
+          setStyle = {setStyle}
         />
         <p className="main-date">
           Last modified:{" "}
@@ -57,6 +70,7 @@ function Main({
           value={activeNote.body}
           onChange={(e) => onEditField("body", e.target.value)}
           placeholder="Write your note here..."
+          style = {style}
         />
       </div>
     </div>

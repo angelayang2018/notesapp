@@ -49,6 +49,7 @@ textarea {
 
 .app-main-note-edit textarea {
   height: 80%;
+  text-align: left;
 }
 
 .app-main,
@@ -68,3 +69,5 @@ textarea {
   transtion: background-color 500ms linear;
   color: white;
 }
+
+
